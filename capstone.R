@@ -45,7 +45,7 @@ denkert.exp = denkert.exp[,row.names(denkert.phenotype)]
 # all data in bonome from serous tumors
 
 # is there batch effect? takes like 10 minutes to load
-#batchQC(cbind(denkert.exp,bonome.exp),batch = c(rep(1,ncol(denkert.exp)),rep(2,ncol(bonome.exp)))) # yes
+batchQC(cbind(denkert.exp,bonome.exp),batch = c(rep(1,ncol(denkert.exp)),rep(2,ncol(bonome.exp)))) # yes
 all.expr = ComBat(cbind(denkert.exp,bonome.exp),batch = c(rep(1,ncol(denkert.exp)),rep(2,ncol(bonome.exp))))
 
 # turn bonome's survival years into months and make into same format
